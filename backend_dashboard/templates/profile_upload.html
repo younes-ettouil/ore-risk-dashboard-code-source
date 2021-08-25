@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uploading Page </title>
+</head>
+<body>
+
+    <div class="urlsToUpload">
+      
+        <li>
+            <a href="http://127.0.0.1:8000/upload-npvT/">upload csv file for npv_total</a><br>
+        </li>
+        <li>
+            <a href="http://127.0.0.1:8000/upload-npvC/">upload csv file for npv_counterparty</a><br>
+        </li>
+        <li>
+            <a href="http://127.0.0.1:8000/upload-npvN/">upload csv file for nettingset</a><br>
+        </li>
+        <li>
+            <a href="http://127.0.0.1:8000/upload-npvTr/">upload csv file for npv_trade</a><br>
+        </li>
+       <li>
+        <a href="http://127.0.0.1:8000/upload-npvCr/">upload csv file for npv_creditrating</a>
+       </li>
+       <li>
+        <a href="http://127.0.0.1:8000/upload-xpvt/">upload csv file for xpv_total</a>
+       </li>
+       <li>
+        <a href="http://127.0.0.1:8000/upload-exposeurt/">upload csv file for exposeur_total</a>
+       </li>
+        <li>
+        <a href="http://127.0.0.1:8000/upload-xpvCounteP/">upload csv file for upload-xpvCounteP/</a>
+       </li>
+        <li>
+        <a href="http://127.0.0.1:8000/upload-xpvcredir/">upload csv file for upload-xpvcredir</a>
+       </li>
+        <li>
+        <a href="http://127.0.0.1:8000/upload-xpvNetts/">upload csv file for upload-xpvNetts/</a>
+       </li>
+        <li>
+        <a href="http://127.0.0.1:8000/upload-LT/">upload-LT/</a>
+       </li>
+        <li>
+        <a href="http://127.0.0.1:8000/upload-CR/">upload csv file for CR</a>
+       </li>
+        <li>
+        <a href="http://127.0.0.1:8000/upload-CP/">upload csv file for CP</a>
+       </li>
+        <li>
+        <a href="http://127.0.0.1:8000/upload-NS/">upload csv file for NS</a>
+       </li>
+        <li>
+        <a href="http://127.0.0.1:8000/upload-TR/">upload csv file for TR</a>
+       </li>
+        <li>
+        <a href="http://127.0.0.1:8000/upload-ad/">upload csv file for all data </a>
+       </li>
+        <li>
+        <a href="http://127.0.0.1:8000/upload-ad2/">upload csv file for all data2 </a>
+       </li>
+    </div>
+    {% if messages %}
+        {% for message in messages %}
+            <div>
+<!--                | means OR operator-->
+                <strong>{{message|safe}}</strong>
+            </div>
+        {% endfor %}
+    {% else %}
+    {{order}}
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="file1"> Upload a file</label>
+        <input type="file" id="file1" name="file">
+        <label for="dateOffile">La Date :</label>
+        <input type="text" name="date">
+        <small>Only accepts CSV files</small>
+        <button type="submit">Upload</button>
+    </form>
+    {% endif %}
+    {% for profile in profiles %}
+    {{profile.Total}}
+    {% endfor %}
+</body>
+<style>
+.urlsToUpload{
+
+}
+</style>
+</html>

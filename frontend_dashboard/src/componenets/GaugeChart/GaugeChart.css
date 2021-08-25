@@ -1,0 +1,35 @@
+#gauge-chart{
+    margin-top: 40px;
+    
+}
+.subnavbar{
+    height: 36px; 
+} 
+
+ .titlePichart{
+    font-size: 20px;
+    color: #a1a3a8;
+    display: flex;
+   margin-top: 10px;
+   margin-left: 15px;
+
+}
+.Separtormini{
+    border: 1px solid #e6e9ed;
+    border-radius: 1px;
+    margin-left: 15px;
+    margin-top: 15px;
+
+}
+.selectItem{
+    padding: 3px;
+    margin-top: -20px;
+    float: right; 
+}
+
+.helpIcon{
+    margin-top: -20px;
+    margin-left: 5px;
+    color: #a1a3a8;
+    float: right;
+}
